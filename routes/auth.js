@@ -9,7 +9,7 @@ router.get("/everyone", controller.everyone);
 
 router.get("/authOnly", controller.checkJwt);
 
-router.post("/login", [loginCheck], controller.login)
+router.post("/login", [controller.loginCheck], controller.login)
 
 router.post("/createUser", controller.createUser2);
 
