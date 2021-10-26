@@ -136,23 +136,8 @@ let everyone = function (req, res) {
 
 let loginCheck = function (req, res) {
     console.log("INSIDE OF LOGIN CHECK")
-
-    let username = req.body.username;
-    let password = req.body.password;
-
-    let params = [];
-    params.push(username);
-    params.push(password);
-
-    db.query(params, function (error, rows) {
-        if (error) {
-            console.log("LOGIN ACCESS DENIED");
-            res.sendStatus(500);
-        } else {
-            console.log("LOGIN GRANTED")
-            res.send(rows);
-        }
-    })
+    let body = req.body;
+    
 }
 
 
