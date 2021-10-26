@@ -117,7 +117,7 @@ let createUser2 = function (req, res) {
     // generate the hash of the password that will be stored in the database
     let passwordHash = bcrypt.hashSync(password, 10);
 
-    let sql = "INSERT INTO users2(username, password, role) VALUES (?, ?, ?);"
+    let sql = "INSERT INTO users2(username, password) VALUES (?, ?, ?);"
     db.query(sql, [username, passwordHash, 'user'], (err, rows) => {
         // if the insert query returned an error, we log the error
         // and return a failed message back
