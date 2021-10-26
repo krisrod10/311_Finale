@@ -25,26 +25,21 @@ app.listen(port, () => {
 })
 
 let contactRoute = require("./routes/contact");
-//app.use(contactRoute);
+app.use(contactRoute);
 
-let contactController = require("./controllers/contact");
-//app.use(contactController);
+
 
 let favContactRoute = require("./routes/favorite");
-//app.use(favContactRoute);
+app.use(favContactRoute);
 
-let favContactController = require("./controllers/favorite");
-//app.use(favContactController);
+
 
 let workContactRoute = require("./routes/work");
-//app.use(workContactRoute);
+app.use(workContactRoute);
 
-let workContactController = require("./controllers/work");
-//app.use(workContactController);
 
 let authLoginRoute = require("./routes/auth");
-//app.use(authLoginRoute);
+app.use(authLoginRoute);
 
-let authLoginController = require("./controllers/auth");
-//app.use(authLoginController);
+
 require("./db/db");

@@ -1,7 +1,7 @@
 let express = require("express");
 let router = express.Router();
 let controller = require("../controllers/work");
-const { route } = require("./contact");
+
 
 // create workContact
 // POST / user -body{"firstname", "lastname", "email", "relationship"}
@@ -19,3 +19,5 @@ router.put("/work", controller.putWorkContact);
 // delete workContact
 // DELETE /work/:id
 router.delete("/work", controller.deleteWorkContact);
+
+module.exports=router;
