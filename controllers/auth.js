@@ -21,7 +21,7 @@ let checkJwt = (req, res, next) => {
     let token;
     if (req.headers.authorization) {
         let bearer = req.headers.authorization.split(" ");
-        let token = bearer[1];
+         token = bearer[1];
     } else {
         token = null;
     }
@@ -52,7 +52,7 @@ let login = function (req, res) {
     let password = req.body.username;
 
     // select the username, role and stored hash from the db for the user passed in
-    db.query("SELECT username, password_hash, role from users2 where username = ? ;", [username], (err, rows) => {
+    db.query("SELECT username, password  from users2 where username = ? ;", [username], (err, rows) => {
         // assume the password provided in the request is bad
         let goodPassword = false;
         let role;
@@ -77,7 +77,7 @@ let login = function (req, res) {
             row = rows[0];
 
             // get the stored hash from the database
-            let hash = row.password_hash;
+           let hash = row.password_hash;
 
             // get the role from the database
             role = row.role;
